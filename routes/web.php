@@ -30,5 +30,3 @@ Route::put('/students/{id}', [StudentController::class, 'update'])->name('studen
 // Delete a student
 Route::delete('/students/{id}', [StudentController::class, 'destroy'])->name('students.destroy');  // Delete student
 
-// Show the student dashboard page (All students)
-Route::get('/dashboard', [StudentController::class, 'index'])->name('students.dashboard');  // Dashboard (List of all students)
