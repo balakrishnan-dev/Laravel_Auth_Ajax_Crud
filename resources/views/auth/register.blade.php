@@ -1,9 +1,38 @@
-<form action="{{ url('/register') }}" method="POST">
+@if(session('login'))
+    <script>
+        alert("{{ session('login') }}");
+    </script>
+@endif
+
+@if(session('error'))
+    <script>
+        alert("{{ session('error') }}");
+    </script>
+@endif
+
+@if(session('register'))
+    <script>
+        alert("{{ session('register') }}");
+    </script>
+@endif
+
+@if(session('logout'))
+    <script>
+        alert("{{ session('logout') }}");
+    </script>
+@endif
+
+
+
+<h1>Registration Form</h1>
+
+<form action="{{url('/register')}}" method="POST">
     @csrf
-    <input type="text" name="name" placeholder="Name">
-    <input type="text" name="phone" placeholder="Phone">
-    <input type="email" name="email" placeholder="Email">
-    <input type="password" name="password" placeholder="Password">
-    <input type="password" name="password_confirmation" placeholder="Confirm Password">
+    Name : <input type="text" name="name"><br>
+    Phone : <input type="text" name="phone"><br>
+    Email : <input type="email" name="email"><br>
+    Password : <input type="text" name="password"><br>
+    Confirm Password : <input type="text" name="password_confirmation"><br>
+    <br>
     <button type="submit">Register</button>
 </form>
